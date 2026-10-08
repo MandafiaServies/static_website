@@ -30,21 +30,42 @@ if (lb) {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 }
 
-// Contact form validation (static demo — connect to a backend/Formspree to receive messages)
+// Contact form: validate in the browser, then send through send-mail.php (live SMTP)
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', e => {
+  const msg = document.getElementById('msg');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const show = (t, ok) => { msg.textContent = t; msg.className = ok ? 'ok' : 'err'; };
+
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const msg = document.getElementById('msg');
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const phone = form.phone.value.trim();
-    const text = form.message.value.trim();
+    const data = new FormData(form);
+    const name = (data.get('name') || '').trim();
+    const email = (data.get('email') || '').trim();
+    const phone = (data.get('phone') || '').trim();
+    const text = (data.get('message') || '').trim();
+
     if (!name || !text) return show('Please fill in your name and message.', false);
     if (!/^\S+@\S+\.\S+$/.test(email)) return show('Please enter a valid email address.', false);
     if (phone && !/^[+\d][\d\s-]{7,}$/.test(phone)) return show('Please enter a valid phone number.', false);
-    show('Thank you, ' + name + '! We have received your enquiry and will contact you within 24 hours.', true);
-    form.reset();
-    function show(t, ok) { msg.textContent = t; msg.className = ok ? 'ok' : 'err'; }
+
+    submitBtn.disabled = true;
+    const label = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    try {
+      const res = await fetch('send-mail.php', { method: 'POST', body: data });
+      const out = await res.json().catch(() => ({}));
+      if (res.ok && out.ok) {
+        show(out.message || 'Thank you! We will contact you shortly.', true);
+        form.reset();
+      } else {
+        show(out.message || 'Sorry, something went wrong. Please try again or call us.', false);
+      }
+    } catch (err) {
+      show('Could not reach the server. Please check your connection or call us.', false);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = label;
+    }
   });
 }

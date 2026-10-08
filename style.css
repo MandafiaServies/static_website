@@ -151,3 +151,26 @@ footer a:hover{color:var(--teal)}
   .grid-3,.foot,form .row{grid-template-columns:1fr}
   section{padding:54px 0}
 }
+
+/* Careers */
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-items:start}
+.job{background:#fff;border:1px solid #e8eef6;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.job h3{font-size:1.25rem}
+.job p{color:var(--muted);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tags span{background:var(--light);color:var(--blue);font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:30px}
+.job details{border-top:1px solid #e8eef6;padding-top:12px}
+.job summary{cursor:pointer;font-weight:700;color:var(--blue)}
+.job summary:hover{color:var(--navy)}
+.job details h4{color:var(--navy);margin:14px 0 6px;font-size:.95rem}
+.job details ul{margin-left:18px;color:var(--muted);font-size:.93rem}
+.job details li{margin-bottom:4px}
+.job-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.job-actions .btn{padding:10px 18px;font-size:.92rem}
+.btn-ghost{border-color:var(--blue);color:var(--blue);background:transparent}
+.btn-ghost:hover{background:var(--blue);color:#fff}
+@media(max-width:900px){.jobs{grid-template-columns:1fr}}
+
+/* Contact form spam trap + disabled state */
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
