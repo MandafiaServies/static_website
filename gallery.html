@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | PrimeCare Facility Management</title>
+<meta name="description" content="A look at PrimeCare's housekeeping, security, maintenance and landscaping work across client sites.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="logo-mark">🏢</span><div>PrimeCare<small>Facility Management</small></div></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero page-hero">
+  <div class="container">
+    <h1>Our Work Gallery</h1>
+    <p>A glimpse of the facilities we look after every day.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="filters">
+      <button class="on" data-filter="all">All</button>
+      <button data-filter="cleaning">Housekeeping</button>
+      <button data-filter="security">Security</button>
+      <button data-filter="maintenance">Maintenance</button>
+      <button data-filter="landscape">Landscaping</button>
+    </div>
+
+    <!-- To use real photos: replace the gradient classes (t1…t6) with
+         style="background-image:url('images/your-photo.jpg');background-size:cover" -->
+    <div class="gallery">
+      <div class="tile t1" data-cat="cleaning"><div class="em">🧽</div><h3>Corporate Tower Cleaning</h3><span>Housekeeping · Gurugram</span></div>
+      <div class="tile t2" data-cat="security"><div class="em">🛡️</div><h3>Mall Security Control Room</h3><span>Security · Noida</span></div>
+      <div class="tile t3" data-cat="maintenance"><div class="em">⚙️</div><h3>HVAC Preventive Service</h3><span>Maintenance · Delhi</span></div>
+      <div class="tile t4" data-cat="landscape"><div class="em">🌳</div><h3>Campus Landscaping</h3><span>Landscaping · Faridabad</span></div>
+      <div class="tile t5" data-cat="cleaning"><div class="em">🧴</div><h3>Hospital Sanitisation Drive</h3><span>Housekeeping · Delhi</span></div>
+      <div class="tile t6" data-cat="maintenance"><div class="em">💡</div><h3>Electrical Panel Upgrade</h3><span>Maintenance · Ghaziabad</span></div>
+      <div class="tile t2" data-cat="landscape"><div class="em">🌿</div><h3>Rooftop Garden</h3><span>Landscaping · Noida</span></div>
+      <div class="tile t1" data-cat="security"><div class="em">👮</div><h3>Residential Society Guards</h3><span>Security · Greater Noida</span></div>
+      <div class="tile t4" data-cat="cleaning"><div class="em">🪟</div><h3>Glass Facade Cleaning</h3><span>Housekeeping · Gurugram</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <div class="box">
+    <button class="close" aria-label="Close">×</button>
+    <div class="em"></div>
+    <h3 style="color:#fff;margin-top:10px"></h3>
+    <p></p>
+  </div>
+</div>
+
+<footer>
+  <div class="container foot">
+    <div><h4>PrimeCare Facility Management</h4><p>Reliable integrated facility services for offices, industries, malls, hospitals and residential communities.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li>Housekeeping</li><li>Security</li><li>Maintenance</li><li>Pest Control</li></ul></div>
+    <div><h4>Contact</h4><ul><li>📍 Sector 18, Noida, India</li><li>📞 +91 98765 43210</li><li>✉️ info@primecarefm.com</li></ul></div>
+  </div>
+  <div class="copy">© <span class="year"></span> PrimeCare Facility Management. All rights reserved.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

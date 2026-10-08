@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | PrimeCare Facility Management</title>
+<meta name="description" content="Request a quote or site survey from PrimeCare Facility Management.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><span class="logo-mark">🏢</span><div>PrimeCare<small>Facility Management</small></div></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="cta active">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero page-hero">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Request a free site survey or a customised quotation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <h2>Get in Touch</h2>
+        <p style="color:var(--muted);margin-bottom:26px">Our team responds to every enquiry within 24 hours.</p>
+        <div class="info-item"><div class="icon">📍</div><div><h3>Head Office</h3><p>Plot 21, Sector 18, Noida,<br>Uttar Pradesh 201301, India</p></div></div>
+        <div class="info-item"><div class="icon">📞</div><div><h3>Phone</h3><p>+91 98765 43210<br>+91 120 400 1234</p></div></div>
+        <div class="info-item"><div class="icon">✉️</div><div><h3>Email</h3><p>info@primecarefm.com<br>sales@primecarefm.com</p></div></div>
+        <div class="info-item"><div class="icon">🕘</div><div><h3>Working Hours</h3><p>Mon – Sat: 9:00 AM – 6:00 PM<br>Emergency support: 24×7</p></div></div>
+      </div>
+
+      <div class="card">
+        <form id="contactForm" novalidate>
+          <div class="row">
+            <div><label for="name">Full Name *</label><input id="name" name="name" type="text" placeholder="Your name"></div>
+            <div><label for="email">Email *</label><input id="email" name="email" type="email" placeholder="you@company.com"></div>
+          </div>
+          <div class="row">
+            <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+91 …"></div>
+            <div><label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option>Integrated Facility Management</option>
+                <option>Housekeeping</option>
+                <option>Security</option>
+                <option>Technical Maintenance</option>
+                <option>Landscaping</option>
+                <option>Pest Control</option>
+                <option>Manpower Supply</option>
+              </select></div>
+          </div>
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us about your facility (type, area, location)…"></textarea>
+          <button type="submit" class="btn btn-primary">Send Enquiry</button>
+          <div id="msg" role="status"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="map">
+      <iframe title="Office location map" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=77.30%2C28.55%2C77.37%2C28.60&amp;layer=mapnik"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <div><h4>PrimeCare Facility Management</h4><p>Reliable integrated facility services for offices, industries, malls, hospitals and residential communities.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li>Housekeeping</li><li>Security</li><li>Maintenance</li><li>Pest Control</li></ul></div>
+    <div><h4>Contact</h4><ul><li>📍 Sector 18, Noida, India</li><li>📞 +91 98765 43210</li><li>✉️ info@primecarefm.com</li></ul></div>
+  </div>
+  <div class="copy">© <span class="year"></span> PrimeCare Facility Management. All rights reserved.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
