@@ -10,11 +10,11 @@ return [
     // GoDaddy Workspace email        : smtpout.secureserver.net | port 465 | 'ssl'
     // Microsoft 365 mailbox          : smtp.office365.com  | port 587 | 'tls'
     // Gmail (app password required)  : smtp.gmail.com      | port 465 | 'ssl'
-    'smtp_host'   => 'mail.mandafiaservices.com',
+    'smtp_host'   => 'smtpout.secureserver.net',
     'smtp_port'   => 465,
     'smtp_secure' => 'ssl',            // 'ssl' (port 465), 'tls' (port 587) or '' (none)
     'smtp_user'   => 'customersupport@mandafiaservices.com',
-    'smtp_pass'   => 'CHANGE_ME',
+    'smtp_pass'   => 'GAXz@j@KrNqgp8X',
 
     // --- Addresses ---
     'from_email'  => 'customersupport@mandafiaservices.com',   // must be the same mailbox/domain as smtp_user
