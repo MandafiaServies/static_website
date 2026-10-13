@@ -174,3 +174,8 @@ footer a:hover{color:var(--teal)}
 /* Contact form spam trap + disabled state */
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* Contact location card */
+.map-card{margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--light);border:1px solid #e8eef6;border-radius:var(--radius);padding:26px 30px}
+.map-card h3{margin-bottom:4px}
+.map-card p{color:var(--muted)}
