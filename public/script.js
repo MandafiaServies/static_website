@@ -53,7 +53,7 @@ if (form) {
     const label = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     try {
-      const res = await fetch('send-mail.php', { method: 'POST', body: data });
+      const res = await fetch('/api/contact', { method: 'POST', body: data });
       const out = await res.json().catch(() => ({}));
       if (res.ok && out.ok) {
         show(out.message || 'Thank you! We will contact you shortly.', true);

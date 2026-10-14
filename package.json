@@ -1,0 +1,16 @@
+{
+  "name": "mandafia-services-website",
+  "version": "1.0.0",
+  "description": "Mandafia Services website: static pages served by Node.js, with a contact form API.",
+  "main": "server.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "build": "echo build",
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

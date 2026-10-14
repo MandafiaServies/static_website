@@ -1,7 +1,0 @@
-# Block direct web access to the SMTP settings file
-<Files "config.php">
-    Require all denied
-</Files>
-
-# Don't list folder contents
-Options -Indexes

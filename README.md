@@ -1,58 +1,72 @@
-# Mandafia Services Website
+# Mandafia Services Website (Node.js)
 
-A responsive 5-page static website for a facility management company.
-Plain HTML, CSS and JavaScript. No build step and no dependencies.
-
-## Pages
-| File | Page |
-|------|------|
-| `index.html` | Home |
-| `about.html` | About |
-| `services.html` | Services |
-| `gallery.html` | Gallery (filter + pop-up) |
-| `careers.html` | Careers (8 openings, each with a downloadable JD) |
-| `contact.html` | Contact (form validation + map) |
+Static website (Home, About, Services, Gallery, Careers, Contact) served by a small Node.js server,
+with a contact form API at `POST /api/contact`. It uses only Node.js built-in modules, so there is
+nothing to install (`dependencies` is empty).
 
 ## Structure
 ```
-mandafia-website/
-├── README.md
+├── server.js        HTTP server: static pages + /api/contact + /healthz
+├── mailer.js        Sends the enquiry email (Resend HTTPS API, or SMTP)
+├── package.json     name, version, main, build and start scripts
+├── package-lock.json
+├── .npmrc           points to the public npm registry (GoDaddy requirement)
+├── .env.example     all settings, copy to .env for local use
 ├── .gitignore
-├── index.html
-├── about.html
-├── services.html
-├── gallery.html
-├── careers.html
-├── contact.html
-├── style.css      shared styles
-├── script.js      menu, gallery, form check, footer year
-├── send-mail.php  contact form handler (sends through SMTP)
-├── config.php     SMTP settings (fill in, keep private)
-├── .htaccess      blocks web access to config.php
-├── jd/            job description PDFs linked from careers.html
-└── images/        put real photos and logo here
+└── public/          the website
+    ├── index.html, about.html, services.html, gallery.html, careers.html, contact.html, 404.html
+    ├── style.css, script.js
+    ├── jd/          job description PDFs
+    └── images/      your photos and logo
 ```
 
 ## Run locally
-Open `index.html` in a browser, or run `python3 -m http.server 8000` and visit http://localhost:8000.
+Needs Node.js 20.12 or newer.
+```
+cp .env.example .env      # then edit the values
+npm start                 # http://localhost:3000
+```
 
-## Deploy (GoDaddy cPanel, mandafiaservices.com)
-1. cPanel > File Manager > `public_html`
-2. Upload all files (HTML, CSS, JS and the `images/` folder) directly into `public_html`
-3. Open https://mandafiaservices.com and check all six pages
-4. In GoDaddy, make sure the domain points to this hosting plan and the free SSL certificate is active (cPanel > SSL/TLS Status > Run AutoSSL)
+## Contact form email
+GoDaddy Node.js hosting does not allow outbound SMTP, so the default transport is an HTTPS email API.
 
-## Contact form (live SMTP)
-The form posts to `send-mail.php`, which sends the enquiry through your SMTP mailbox. Needs Linux hosting with PHP (GoDaddy cPanel hosting has it).
-1. Create a mailbox such as `customersupport@mandafiaservices.com` (cPanel > Email Accounts).
-2. Open `config.php` and set `smtp_host`, `smtp_port`, `smtp_secure`, `smtp_user`, `smtp_pass`, `from_email` and `to_email`.
-3. Upload `send-mail.php`, `config.php` and `.htaccess` next to `contact.html`.
-4. Submit the form on your live site and check the inbox (and spam folder).
-The form only works on the hosted site, not when `contact.html` is opened from your computer.
-Built-in protection: server-side validation, hidden spam-trap field, 5 submissions per hour per IP, header-injection filtering.
+**Option A: Resend (default, works on GoDaddy Node.js hosting)**
+1. Create an account at resend.com and add the domain `mandafiaservices.com`.
+2. Add the DNS records Resend shows you in GoDaddy DNS (Domain > DNS), then click Verify.
+3. Create an API key.
+4. Set these environment variables:
+   `MAIL_TRANSPORT=resend`, `RESEND_API_KEY`, `FROM_EMAIL=customersupport@mandafiaservices.com`,
+   `TO_EMAIL=customersupport@mandafiaservices.com`, `FROM_NAME`.
 
-## Things to customise
-- Company name, address, phone and email (repeated in the footer of every page)
-- Team names on `about.html`
-- Job openings: edit the cards in `careers.html` and replace the PDFs in `jd/` (the HR email is career@mandafiaservices.com)
-- Gallery tiles: swap the coloured blocks for real photos (see the comment in `gallery.html`)
+`TO_EMAIL` must be a mailbox that exists, or enquiries bounce.
+
+**Option B: SMTP (local testing, VPS, any host that allows SMTP)**
+Set `MAIL_TRANSPORT=smtp`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE` (`true` for 465, `starttls` for 587),
+`SMTP_USER`, `SMTP_PASS`, `FROM_EMAIL`, `TO_EMAIL`.
+
+Built-in protection: server-side validation, hidden spam-trap field, `RATE_LIMIT_PER_HOUR` submissions per
+visitor per hour (default 5), 20 KB request limit, header-injection filtering.
+
+## Deploy on GoDaddy Node.js Hosting
+1. Zip the project so that `package.json` is at the top level of the zip (zip the contents of this folder,
+   not the folder itself). Leave out `node_modules` and `.env`. `mandafia-node-deploy.zip` is already prepared.
+2. In your GoDaddy account, open Node.js Hosting, create a new app, choose a region, and upload the zip.
+   Alternatively, connect a GitHub repository and every push to the chosen branch redeploys.
+3. Add the environment variables from the section above in the app's settings (they are stored encrypted).
+   Do not put real keys in the zip.
+4. Connect the domain: in the app's Settings, change the domain name to `mandafiaservices.com`.
+   For a domain registered elsewhere, GoDaddy shows the exact A and CNAME records to add.
+5. Publish, then open https://mandafiaservices.com and test all six pages and the contact form.
+
+Notes
+- The server reads its port from `PORT` and listens on `0.0.0.0`.
+- Nothing in this app writes files to disk.
+- Preview apps are private and are removed after 30 days. Publishing needs a hosting plan that includes
+  a Node.js app slot.
+- GoDaddy Node.js hosting is a new product, so screen names and limits may change. Check GoDaddy's
+  current help pages.
+
+## Customise
+- Company details (address, phone, email) are repeated in the footer of every page in `public/`.
+- Job openings are the cards in `public/careers.html`; replace the PDFs in `public/jd/`.
+- Replace the gallery colour tiles with real photos (see the comment in `public/gallery.html`).
