@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Clients | Mandafia Services</title>
+<meta name="description" content="Businesses, factories, hospitals, schools and housing societies that trust Mandafia Services for integrated facility management.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="images/logo.png" alt="Mandafia Services" style="height:76px;width:auto;max-width:70vw;display:block"></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html" class="active">Clients</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html" class="cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero page-hero">
+  <div class="container">
+    <h1>Our Clients</h1>
+    <p>Trusted by businesses and communities across industries.</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container grid">
+    <div><strong>250+</strong><span>Sites Managed</span></div>
+    <div><strong>25+</strong><span>Years of Experience</span></div>
+    <div><strong>3,500+</strong><span>Trained Staff</span></div>
+    <div><strong>98%</strong><span>Client Retention</span></div>
+  </div>
+</div>
+
+<style>
+.cl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;justify-content:center}
+.cl-item{height:110px;background:#fff;border:1px solid #e3eaf3;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:18px;box-shadow:0 4px 14px rgba(11,37,69,.06);transition:.25s}
+.cl-item:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,37,69,.12)}
+.cl-item img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+@media(max-width:900px){.cl-ind{grid-template-columns:1fr 1fr!important}}
+@media(max-width:520px){.cl-ind{grid-template-columns:1fr!important}}
+</style>
+
+<section id="cl-section" style="display:none">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Who We Work With</span>
+      <h2>Companies That Trust Us</h2>
+      <p>Long-term partners who rely on us to keep their facilities running every day.</p>
+    </div>
+    <!-- CLIENT LOGOS: put files in public/images/clients/ named client-1.png ... client-12.png (.png .jpg .jpeg .webp .svg). Missing ones are hidden. -->
+    <div class="cl-grid" id="cl-grid">
+      <div class="cl-item"><img data-base="images/clients/client-1" alt="Client 1"></div>
+      <div class="cl-item"><img data-base="images/clients/client-2" alt="Client 2"></div>
+      <div class="cl-item"><img data-base="images/clients/client-3" alt="Client 3"></div>
+      <div class="cl-item"><img data-base="images/clients/client-4" alt="Client 4"></div>
+      <div class="cl-item"><img data-base="images/clients/client-5" alt="Client 5"></div>
+      <div class="cl-item"><img data-base="images/clients/client-6" alt="Client 6"></div>
+      <div class="cl-item"><img data-base="images/clients/client-7" alt="Client 7"></div>
+      <div class="cl-item"><img data-base="images/clients/client-8" alt="Client 8"></div>
+      <div class="cl-item"><img data-base="images/clients/client-9" alt="Client 9"></div>
+      <div class="cl-item"><img data-base="images/clients/client-10" alt="Client 10"></div>
+      <div class="cl-item"><img data-base="images/clients/client-11" alt="Client 11"></div>
+      <div class="cl-item"><img data-base="images/clients/client-12" alt="Client 12"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Industries We Serve</span>
+      <h2>Tailored for Every Type of Facility</h2>
+    </div>
+    <div class="grid-3 cl-ind" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card"><div class="icon">🏢</div><h3>Corporate Offices</h3></div>
+      <div class="card"><div class="icon">🏭</div><h3>Factories</h3></div>
+      <div class="card"><div class="icon">🏥</div><h3>Hospitals</h3></div>
+      <div class="card"><div class="icon">🏬</div><h3>Malls &amp; Retail</h3></div>
+      <div class="card"><div class="icon">🎓</div><h3>Schools &amp; Colleges</h3></div>
+      <div class="card"><div class="icon">🏘️</div><h3>Housing Societies</h3></div>
+      <div class="card"><div class="icon">🏨</div><h3>Hotels</h3></div>
+      <div class="card"><div class="icon">🏦</div><h3>Banks</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Want Us to Manage Your Facility?</h2>
+    <p>Join the businesses that trust Mandafia Services. Get a free quote today.</p>
+    <a href="contact.html" class="btn">Get a Free Quote</a>
+  </div>
+</section>
+
+<script>
+(function(){
+  var exts=['png','jpg','jpeg','webp','svg'],items=[].slice.call(document.querySelectorAll('.cl-item')),shown=0;
+  items.forEach(function(it){
+    var img=it.querySelector('img'),base=img.dataset.base,k=0;
+    it.style.display='none';
+    img.onload=function(){it.style.display='flex';document.getElementById('cl-section').style.display='block'};
+    img.onerror=function(){k++;if(k<exts.length)img.src=base+'.'+exts[k];else it.remove()};
+    img.src=base+'.'+exts[0];
+  });
+})();
+</script>
+
+<footer>
+  <div class="container foot">
+    <div><h4>Mandafia Services</h4><p>Reliable integrated facility services for offices, industries, malls, hospitals and residential communities.</p></div>
+    <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="clients.html">Clients</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="services.html">Soft Services and Housekeeping</a></li><li><a href="services.html">Facility Audits and Operational Reporting</a></li><li><a href="services.html">Workforce and Vendor Management</a></li><li><a href="services.html">Security and Safety Coordination</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>📍 <a href="https://address.co/virtual-office-gurgaon/mgf-road" target="_blank" rel="noopener">MG Road, Sector 16, Gurugram, Haryana 122007</a></li><li>📞 <a href="tel:+919958120746">+91 99581 20746</a></li><li>✉️ <a href="mailto:customersupport@mandafiaservices.com">customersupport@mandafiaservices.com</a></li></ul></div>
+  </div>
+  <div class="copy">© <span class="year"></span> Mandafia Services. All rights reserved.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
