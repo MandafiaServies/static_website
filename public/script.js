@@ -30,7 +30,7 @@ if (lb) {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 }
 
-// Contact form: validate in the browser, then send through send-mail.php (live SMTP)
+// Contact form: validate in the browser, then send through /api/contact
 const form = document.getElementById('contactForm');
 if (form) {
   const msg = document.getElementById('msg');
@@ -53,7 +53,7 @@ if (form) {
     const label = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     try {
-      const res = await fetch('/api/contact', { method: 'POST', body: data });
+      const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data) });
       const out = await res.json().catch(() => ({}));
       if (res.ok && out.ok) {
         show(out.message || 'Thank you! We will contact you shortly.', true);

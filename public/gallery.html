@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Our Services | Mandafia Services</title>
-<meta name="description" content="Soft services, technical maintenance, security, landscaping, pest control, helpdesk, audits and sustainability support from Mandafia Services.">
+<title>Gallery | Mandafia Services</title>
+<meta name="description" content="A look at Mandafia Services at work: housekeeping, security, technical maintenance, landscaping and more.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html" class="cta">Contact</a></li>
       </ul>
@@ -27,71 +27,38 @@
 
 <section class="hero page-hero">
   <div class="container">
-    <h1>Our Services</h1>
-    <p>Complete soft and technical facility services under one roof.</p>
+    <h1>Gallery</h1>
+    <p>Our teams and services at work across client sites.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">What We Offer</span>
-      <h2>Our Service Capabilities</h2>
-      <p>Eleven services you can combine into one integrated contract, with a single team accountable for all of them.</p>
+    <!-- To use real photos, add style="background-image:url('images/your-photo.jpg');background-size:cover" to a tile. -->
+    <div class="filters">
+      <button class="on" data-filter="all">All</button>
+      <button data-filter="clean">Housekeeping</button>
+      <button data-filter="tech">Technical</button>
+      <button data-filter="security">Security</button>
+      <button data-filter="green">Green &amp; Pest</button>
     </div>
-    <div class="svc-grid">
-      <div class="card svc"><div class="icon">🧹</div><h3>Soft Services and Housekeeping</h3><p>Clean, hygienic premises every day.</p>
-        <ul><li>Daily office and washroom cleaning</li><li>Mechanised floor scrubbing</li><li>Deep cleaning and sanitisation</li><li>Pantry and common-area upkeep</li></ul></div>
-      <div class="card svc"><div class="icon">🔧</div><h3>Technical and Engineering Maintenance</h3><p>Engineering support that keeps the building running.</p>
-        <ul><li>Building systems upkeep</li><li>Quick breakdown response</li><li>Equipment logs and records</li><li>Shift-based technical teams</li></ul></div>
-      <div class="card svc"><div class="icon">⚡</div><h3>Electrical, Plumbing, and HVAC Maintenance</h3><p>Core utilities maintained by trained technicians.</p>
-        <ul><li>LT panels, lighting, DG and UPS</li><li>Water supply, pumps and drainage</li><li>Chillers, AHUs, split and VRV units</li><li>Preventive and breakdown service</li></ul></div>
-      <div class="card svc"><div class="icon">🛡️</div><h3>Security and Safety Coordination</h3><p>Protection for people, property and assets.</p>
-        <ul><li>Guards and access control</li><li>Visitor and vehicle management</li><li>CCTV monitoring</li><li>Fire safety drills and emergency coordination</li></ul></div>
-      <div class="card svc"><div class="icon">🌿</div><h3>Landscaping and Horticulture</h3><p>Green, well-kept surroundings.</p>
-        <ul><li>Garden design and development</li><li>Lawn and plant maintenance</li><li>Indoor plantscaping</li><li>Terrace and vertical gardens</li></ul></div>
-      <div class="card svc"><div class="icon">🐜</div><h3>Pest Control Management</h3><p>Safe, scheduled pest prevention.</p>
-        <ul><li>Termite and rodent control</li><li>Mosquito and fly management</li><li>Cockroach and bed-bug treatment</li><li>Regular service plans</li></ul></div>
-      <div class="card svc"><div class="icon">🛎️</div><h3>Front Office and Helpdesk Support</h3><p>A professional first point of contact.</p>
-        <ul><li>Reception and visitor management</li><li>Helpdesk request tracking</li><li>Courier and mailroom handling</li><li>Meeting room and pantry coordination</li></ul></div>
-      <div class="card svc"><div class="icon">👥</div><h3>Workforce and Vendor Management</h3><p>One accountable team for people and partners.</p>
-        <ul><li>Staff deployment and supervision</li><li>Attendance, payroll and statutory compliance</li><li>Vendor coordination</li><li>Vendor performance tracking</li></ul></div>
-      <div class="card svc"><div class="icon">🏢</div><h3>Building Operations and Preventive Maintenance</h3><p>Planned care that avoids costly breakdowns.</p>
-        <ul><li>Preventive maintenance schedules</li><li>AMC and contract tracking</li><li>Asset registers</li><li>SLA monitoring</li></ul></div>
-      <div class="card svc"><div class="icon">📋</div><h3>Facility Audits and Operational Reporting</h3><p>Clear visibility into how your facility performs.</p>
-        <ul><li>Periodic site and safety audits</li><li>Monthly performance reports</li><li>Incident and complaint logs</li><li>Improvement action plans</li></ul></div>
-      <div class="card svc"><div class="icon">♻️</div><h3>Waste Management and Sustainability Support</h3><p>Responsible waste handling and greener operations.</p>
-        <ul><li>Waste segregation and disposal</li><li>Recycling coordination</li><li>Water and energy saving practices</li><li>Sustainability reporting support</li></ul></div>
+    <div class="gallery">
+      <div class="tile t1" data-cat="clean"><div class="em">🧹</div><h3>Housekeeping</h3><span>Daily and deep cleaning</span></div>
+      <div class="tile t2" data-cat="clean"><div class="em">🧽</div><h3>Mechanised Scrubbing</h3><span>Floor care with modern machines</span></div>
+      <div class="tile t3" data-cat="tech"><div class="em">⚡</div><h3>Electrical Maintenance</h3><span>Panels, DG and UPS upkeep</span></div>
+      <div class="tile t4" data-cat="tech"><div class="em">❄️</div><h3>HVAC Service</h3><span>Chillers, AHUs and VRV units</span></div>
+      <div class="tile t5" data-cat="security"><div class="em">🛡️</div><h3>Security Teams</h3><span>Guards and access control</span></div>
+      <div class="tile t6" data-cat="green"><div class="em">🌿</div><h3>Landscaping</h3><span>Gardens and plantscaping</span></div>
+      <div class="tile t1" data-cat="green"><div class="em">🐜</div><h3>Pest Control</h3><span>Scheduled, safe treatments</span></div>
+      <div class="tile t2" data-cat="security"><div class="em">🛎️</div><h3>Front Desk</h3><span>Reception and helpdesk</span></div>
     </div>
   </div>
 </section>
 
-<section class="bg-light">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Industries We Serve</span>
-      <h2>Tailored for Every Type of Facility</h2>
-    </div>
-    <div class="grid-3" style="grid-template-columns:repeat(4,1fr)">
-      <div class="card"><div class="icon">🏢</div><h3>Corporate Offices</h3></div>
-      <div class="card"><div class="icon">🏭</div><h3>Factories</h3></div>
-      <div class="card"><div class="icon">🏥</div><h3>Hospitals</h3></div>
-      <div class="card"><div class="icon">🏬</div><h3>Malls &amp; Retail</h3></div>
-      <div class="card"><div class="icon">🎓</div><h3>Schools &amp; Colleges</h3></div>
-      <div class="card"><div class="icon">🏘️</div><h3>Housing Societies</h3></div>
-      <div class="card"><div class="icon">🏨</div><h3>Hotels</h3></div>
-      <div class="card"><div class="icon">🏦</div><h3>Banks</h3></div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="container">
-    <h2>Need a Customised Service Package?</h2>
-    <p>Combine services into one integrated contract and save on cost and coordination.</p>
-    <a href="contact.html" class="btn">Talk to Our Team</a>
-  </div>
-</section>
+<div class="lightbox" id="lightbox">
+  <button class="close" aria-label="Close">&times;</button>
+  <div class="box"><div class="em"></div><h3></h3><p></p></div>
+</div>
 
 <footer>
   <div class="container foot">
