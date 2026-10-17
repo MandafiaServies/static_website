@@ -4,21 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gallery | Mandafia Services</title>
-<meta name="description" content="A look at Mandafia Services at work: housekeeping, security, technical maintenance, landscaping and more.">
-<link rel="icon" type="image/png" href="images/favicon.png">
+<meta name="description" content="A look at Mandafia Services's housekeeping, security, maintenance and landscaping work across client sites.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
   <div class="container nav">
-    <a href="index.html" class="logo"><img src="images/logo.png" alt="Mandafia Services" style="height:76px;width:auto;max-width:70vw;display:block"></a>
+    <a href="index.html" class="logo"><span class="logo-mark">🏢</span><div>Mandafia<small>Services</small></div></a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
     <nav id="mainNav">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="clients.html">Clients</a></li>
         <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="contact.html" class="cta">Contact</a></li>
@@ -29,103 +27,51 @@
 
 <section class="hero page-hero">
   <div class="container">
-    <h1>Gallery</h1>
-    <p>Our teams and services at work across client sites.</p>
+    <h1>Our Work Gallery</h1>
+    <p>A glimpse of the facilities we look after every day.</p>
   </div>
 </section>
 
-<style>
-.gfilters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
-.gfilters button{padding:9px 20px;border-radius:30px;border:2px solid #d5e0ee;background:#fff;font-weight:600;color:#0b2545;cursor:pointer;transition:.2s;font-family:inherit;font-size:1rem}
-.gfilters button.on,.gfilters button:hover{background:#13579b;border-color:#13579b;color:#fff}
-.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
-.gitem{margin:0;position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#e8eef6;cursor:pointer;box-shadow:0 6px 18px rgba(11,37,69,.12)}
-.gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-.gitem:hover img{transform:scale(1.05)}
-.gitem figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;color:#fff;font-weight:600;font-size:.9rem;background:linear-gradient(transparent,rgba(5,15,30,.75))}
-.gitem[hidden]{display:none}
-#glb{position:fixed;inset:0;background:rgba(5,15,30,.92);display:none;place-items:center;z-index:100;padding:20px}
-#glb.open{display:grid}
-#glb img{max-width:min(1000px,100%);max-height:85vh;border-radius:10px;display:block}
-#glb button{position:absolute;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;padding:10px;line-height:1}
-#glb .gx{top:10px;right:16px}#glb .gp{left:10px;top:50%}#glb .gn{right:10px;top:50%}
-</style>
 <section>
   <div class="container">
-    <!-- PHOTOS: put files in public/images/gallery/ named housekeeping-1.jpg ... housekeeping-7.jpg,
-         technical-1.jpg, security-1.jpg, green-1.jpg (up to 7 each; .jpg .jpeg .png .webp). Missing ones are hidden automatically. -->
-    <div class="gfilters">
+    <div class="filters">
       <button class="on" data-filter="all">All</button>
-      <button data-filter="housekeeping">Housekeeping</button>
-      <button data-filter="technical">Technical</button>
+      <button data-filter="cleaning">Housekeeping</button>
       <button data-filter="security">Security</button>
-      <button data-filter="green">Green &amp; Pest</button>
+      <button data-filter="maintenance">Maintenance</button>
+      <button data-filter="landscape">Landscaping</button>
     </div>
-    <div class="ggrid" id="ggrid">
-      <figure class="gitem" data-cat="housekeeping" data-n="1"><img data-base="images/gallery/housekeeping-1" alt="Housekeeping photo 1"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="housekeeping" data-n="2"><img data-base="images/gallery/housekeeping-2" alt="Housekeeping photo 2"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="housekeeping" data-n="3"><img data-base="images/gallery/housekeeping-3" alt="Housekeeping photo 3"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="housekeeping" data-n="4"><img data-base="images/gallery/housekeeping-4" alt="Housekeeping photo 4"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="housekeeping" data-n="5"><img data-base="images/gallery/housekeeping-5" alt="Housekeeping photo 5"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="housekeeping" data-n="6"><img data-base="images/gallery/housekeeping-6" alt="Housekeeping photo 6"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="housekeeping" data-n="7"><img data-base="images/gallery/housekeeping-7" alt="Housekeeping photo 7"><figcaption>Housekeeping</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="1"><img data-base="images/gallery/technical-1" alt="Technical photo 1"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="2"><img data-base="images/gallery/technical-2" alt="Technical photo 2"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="3"><img data-base="images/gallery/technical-3" alt="Technical photo 3"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="4"><img data-base="images/gallery/technical-4" alt="Technical photo 4"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="5"><img data-base="images/gallery/technical-5" alt="Technical photo 5"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="6"><img data-base="images/gallery/technical-6" alt="Technical photo 6"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="technical" data-n="7"><img data-base="images/gallery/technical-7" alt="Technical photo 7"><figcaption>Technical</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="1"><img data-base="images/gallery/security-1" alt="Security photo 1"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="2"><img data-base="images/gallery/security-2" alt="Security photo 2"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="3"><img data-base="images/gallery/security-3" alt="Security photo 3"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="4"><img data-base="images/gallery/security-4" alt="Security photo 4"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="5"><img data-base="images/gallery/security-5" alt="Security photo 5"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="6"><img data-base="images/gallery/security-6" alt="Security photo 6"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="security" data-n="7"><img data-base="images/gallery/security-7" alt="Security photo 7"><figcaption>Security</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="1"><img data-base="images/gallery/green-1" alt="Green &amp; Pest photo 1"><figcaption>Green &amp; Pest</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="2"><img data-base="images/gallery/green-2" alt="Green &amp; Pest photo 2"><figcaption>Green &amp; Pest</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="3"><img data-base="images/gallery/green-3" alt="Green &amp; Pest photo 3"><figcaption>Green &amp; Pest</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="4"><img data-base="images/gallery/green-4" alt="Green &amp; Pest photo 4"><figcaption>Green &amp; Pest</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="5"><img data-base="images/gallery/green-5" alt="Green &amp; Pest photo 5"><figcaption>Green &amp; Pest</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="6"><img data-base="images/gallery/green-6" alt="Green &amp; Pest photo 6"><figcaption>Green &amp; Pest</figcaption></figure>
-      <figure class="gitem" data-cat="green" data-n="7"><img data-base="images/gallery/green-7" alt="Green &amp; Pest photo 7"><figcaption>Green &amp; Pest</figcaption></figure>
+
+    <!-- To use real photos: replace the gradient classes (t1…t6) with
+         style="background-image:url('images/your-photo.jpg');background-size:cover" -->
+    <div class="gallery">
+      <div class="tile t1" data-cat="cleaning"><div class="em">🧽</div><h3>Corporate Tower Cleaning</h3><span>Housekeeping · Gurugram</span></div>
+      <div class="tile t2" data-cat="security"><div class="em">🛡️</div><h3>Mall Security Control Room</h3><span>Security · Noida</span></div>
+      <div class="tile t3" data-cat="maintenance"><div class="em">⚙️</div><h3>HVAC Preventive Service</h3><span>Maintenance · Delhi</span></div>
+      <div class="tile t4" data-cat="landscape"><div class="em">🌳</div><h3>Campus Landscaping</h3><span>Landscaping · Faridabad</span></div>
+      <div class="tile t5" data-cat="cleaning"><div class="em">🧴</div><h3>Hospital Sanitisation Drive</h3><span>Housekeeping · Delhi</span></div>
+      <div class="tile t6" data-cat="maintenance"><div class="em">💡</div><h3>Electrical Panel Upgrade</h3><span>Maintenance · Ghaziabad</span></div>
+      <div class="tile t2" data-cat="landscape"><div class="em">🌿</div><h3>Rooftop Garden</h3><span>Landscaping · Noida</span></div>
+      <div class="tile t1" data-cat="security"><div class="em">👮</div><h3>Residential Society Guards</h3><span>Security · Greater Noida</span></div>
+      <div class="tile t4" data-cat="cleaning"><div class="em">🪟</div><h3>Glass Facade Cleaning</h3><span>Housekeeping · Gurugram</span></div>
     </div>
-    <p id="gempty" style="display:none;text-align:center;color:#5b6b80">Photos coming soon.</p>
   </div>
 </section>
 
-<div id="glb"><button class="gx" aria-label="Close">&times;</button><button class="gp" aria-label="Previous">&#8249;</button><img alt=""><button class="gn" aria-label="Next">&#8250;</button></div>
-
-<script>
-(function(){
-  var exts=['jpg','jpeg','png','webp'],items=[].slice.call(document.querySelectorAll('.gitem')),filter='all';
-  function visible(){return items.filter(function(i){return !i.hidden&&i.dataset.ok&&(filter==='all'||i.dataset.cat===filter)})}
-  function refresh(){items.forEach(function(i){i.style.display=(i.dataset.ok&&(filter==='all'||i.dataset.cat===filter))?'':'none'});document.getElementById('gempty').style.display=visible().length?'none':'block'}
-  items.forEach(function(it){
-    var img=it.querySelector('img'),base=img.dataset.base,k=0;
-    it.style.display='none';
-    img.onload=function(){it.dataset.ok='1';refresh()};
-    img.onerror=function(){k++;if(k<exts.length)img.src=base+'.'+exts[k];else it.remove()};
-    img.src=base+'.'+exts[0];
-  });
-  document.querySelectorAll('.gfilters button').forEach(function(b){b.addEventListener('click',function(){
-    document.querySelectorAll('.gfilters button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');filter=b.dataset.filter;refresh()})});
-  var lb=document.getElementById('glb'),lbi=lb.querySelector('img'),cur=0,list=[];
-  function show(){lbi.src=list[cur].querySelector('img').src;lbi.alt=list[cur].querySelector('img').alt}
-  document.getElementById('ggrid').addEventListener('click',function(e){var f=e.target.closest('.gitem');if(!f)return;list=visible();cur=list.indexOf(f);show();lb.classList.add('open')});
-  lb.querySelector('.gp').onclick=function(e){e.stopPropagation();cur=(cur-1+list.length)%list.length;show()};
-  lb.querySelector('.gn').onclick=function(e){e.stopPropagation();cur=(cur+1)%list.length;show()};
-  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('gx'))lb.classList.remove('open')});
-  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowRight')lb.querySelector('.gn').click();if(e.key==='ArrowLeft')lb.querySelector('.gp').click()});
-})();
-</script>
+<div class="lightbox" id="lightbox">
+  <div class="box">
+    <button class="close" aria-label="Close">×</button>
+    <div class="em"></div>
+    <h3 style="color:#fff;margin-top:10px"></h3>
+    <p></p>
+  </div>
+</div>
 
 <footer>
   <div class="container foot">
     <div><h4>Mandafia Services</h4><p>Reliable integrated facility services for offices, industries, malls, hospitals and residential communities.</p></div>
-    <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="clients.html">Clients</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div><h4>Services</h4><ul><li><a href="services.html">Soft Services and Housekeeping</a></li><li><a href="services.html">Facility Audits and Operational Reporting</a></li><li><a href="services.html">Workforce and Vendor Management</a></li><li><a href="services.html">Security and Safety Coordination</a></li></ul></div>
+    <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="services.html">Soft Services and Housekeeping</a></li><li><a href="services.html">Technical and Engineering Maintenance</a></li><li><a href="services.html">Electrical, Plumbing, and HVAC Maintenance</a></li><li><a href="services.html">Security and Safety Coordination</a></li><li><a href="services.html">Landscaping and Horticulture</a></li><li><a href="services.html">Pest Control Management</a></li><li><a href="services.html">Front Office and Helpdesk Support</a></li><li><a href="services.html">Workforce and Vendor Management</a></li><li><a href="services.html">Building Operations and Preventive Maintenance</a></li><li><a href="services.html">Facility Audits and Operational Reporting</a></li><li><a href="services.html">Waste Management and Sustainability Support</a></li></ul></div>
     <div><h4>Contact</h4><ul><li>📍 <a href="https://address.co/virtual-office-gurgaon/mgf-road" target="_blank" rel="noopener">MG Road, Sector 16, Gurugram, Haryana 122007</a></li><li>📞 <a href="tel:+919958120746">+91 99581 20746</a></li><li>✉️ <a href="mailto:customersupport@mandafiaservices.com">customersupport@mandafiaservices.com</a></li></ul></div>
   </div>
   <div class="copy">© <span class="year"></span> Mandafia Services. All rights reserved.</div>
