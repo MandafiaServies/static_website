@@ -18,16 +18,33 @@ filterBtns.forEach(b => b.addEventListener('click', () => {
 
 const lb = document.getElementById('lightbox');
 if (lb) {
-  const box = lb.querySelector('.box');
+  const img = lb.querySelector('img');
+  const prev = lb.querySelector('.prev'), next = lb.querySelector('.next');
+  let list = [], idx = 0;
+  const render = () => {
+    img.src = list[idx];
+    prev.classList.toggle('hide', list.length < 2);
+    next.classList.toggle('hide', list.length < 2);
+  };
+  const step = d => { idx = (idx + d + list.length) % list.length; render(); };
   tiles.forEach(t => t.addEventListener('click', () => {
-    box.className = 'box ' + [...t.classList].find(c => /^t\d$/.test(c));
-    box.querySelector('.em').textContent = t.querySelector('.em').textContent;
-    box.querySelector('h3').textContent = t.querySelector('h3').textContent;
-    box.querySelector('p').textContent = t.querySelector('span').textContent;
+    list = (t.dataset.images || '').split(',').filter(Boolean);
+    idx = 0;
+    img.alt = t.querySelector('h3').textContent;
+    lb.querySelector('h3').textContent = t.querySelector('h3').textContent;
+    lb.querySelector('p').textContent = t.querySelector('span').textContent;
+    render();
     lb.classList.add('open');
   }));
+  prev.addEventListener('click', e => { e.stopPropagation(); step(-1); });
+  next.addEventListener('click', e => { e.stopPropagation(); step(1); });
   lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('close')) lb.classList.remove('open'); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lb.classList.remove('open');
+    if (e.key === 'ArrowLeft' && list.length > 1) step(-1);
+    if (e.key === 'ArrowRight' && list.length > 1) step(1);
+  });
 }
 
 // Contact form: validate in the browser, then send through /api/contact

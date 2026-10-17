@@ -43,18 +43,16 @@
       <button data-filter="landscape">Landscaping</button>
     </div>
 
-    <!-- To use real photos: replace the gradient classes (t1…t6) with
-         style="background-image:url('images/your-photo.jpg');background-size:cover" -->
     <div class="gallery">
-      <div class="tile t1" data-cat="cleaning"><div class="em">🧽</div><h3>Corporate Tower Cleaning</h3><span>Housekeeping · Gurugram</span></div>
-      <div class="tile t2" data-cat="security"><div class="em">🛡️</div><h3>Mall Security Control Room</h3><span>Security · Noida</span></div>
-      <div class="tile t3" data-cat="maintenance"><div class="em">⚙️</div><h3>HVAC Preventive Service</h3><span>Maintenance · Delhi</span></div>
-      <div class="tile t4" data-cat="landscape"><div class="em">🌳</div><h3>Campus Landscaping</h3><span>Landscaping · Faridabad</span></div>
-      <div class="tile t5" data-cat="cleaning"><div class="em">🧴</div><h3>Hospital Sanitisation Drive</h3><span>Housekeeping · Delhi</span></div>
-      <div class="tile t6" data-cat="maintenance"><div class="em">💡</div><h3>Electrical Panel Upgrade</h3><span>Maintenance · Ghaziabad</span></div>
-      <div class="tile t2" data-cat="landscape"><div class="em">🌿</div><h3>Rooftop Garden</h3><span>Landscaping · Noida</span></div>
-      <div class="tile t1" data-cat="security"><div class="em">👮</div><h3>Residential Society Guards</h3><span>Security · Greater Noida</span></div>
-      <div class="tile t4" data-cat="cleaning"><div class="em">🪟</div><h3>Glass Facade Cleaning</h3><span>Housekeeping · Gurugram</span></div>
+      <div class="tile" data-cat="cleaning" data-images="images/gallery/corporate-tower-cleaning-1.jpg,images/gallery/corporate-tower-cleaning-2.jpg,images/gallery/corporate-tower-cleaning-3.jpg,images/gallery/corporate-tower-cleaning-4.jpg,images/gallery/corporate-tower-cleaning-5.jpg,images/gallery/corporate-tower-cleaning-6.jpg"><img src="images/gallery/corporate-tower-cleaning-1.jpg" alt="Corporate Tower Cleaning" loading="lazy"><em class="count">6 photos</em><div class="cap"><h3>Corporate Tower Cleaning</h3><span>Housekeeping · Gurugram</span></div></div>
+      <div class="tile" data-cat="security" data-images="images/gallery/mall-security-control-room-1.jpg,images/gallery/mall-security-control-room-2.jpg,images/gallery/mall-security-control-room-3.jpg"><img src="images/gallery/mall-security-control-room-1.jpg" alt="Mall Security Control Room" loading="lazy"><em class="count">3 photos</em><div class="cap"><h3>Mall Security Control Room</h3><span>Security · Noida</span></div></div>
+      <div class="tile" data-cat="maintenance" data-images="images/gallery/hvac-preventive-service-1.jpg,images/gallery/hvac-preventive-service-2.jpg,images/gallery/hvac-preventive-service-3.jpg"><img src="images/gallery/hvac-preventive-service-1.jpg" alt="HVAC Preventive Service" loading="lazy"><em class="count">3 photos</em><div class="cap"><h3>HVAC Preventive Service</h3><span>Maintenance · Delhi</span></div></div>
+      <div class="tile" data-cat="landscape" data-images="images/gallery/campus-landscaping-1.jpg,images/gallery/campus-landscaping-2.jpg,images/gallery/campus-landscaping-3.jpg"><img src="images/gallery/campus-landscaping-1.jpg" alt="Campus Landscaping" loading="lazy"><em class="count">3 photos</em><div class="cap"><h3>Campus Landscaping</h3><span>Landscaping · Faridabad</span></div></div>
+      <div class="tile" data-cat="cleaning" data-images="images/gallery/hospital-sanitisation-drive-1.jpg"><img src="images/gallery/hospital-sanitisation-drive-1.jpg" alt="Hospital Sanitisation Drive" loading="lazy"><div class="cap"><h3>Hospital Sanitisation Drive</h3><span>Housekeeping · Delhi</span></div></div>
+      <div class="tile" data-cat="maintenance" data-images="images/gallery/electrical-panel-upgrade-1.jpg,images/gallery/electrical-panel-upgrade-2.jpg,images/gallery/electrical-panel-upgrade-3.jpg"><img src="images/gallery/electrical-panel-upgrade-1.jpg" alt="Electrical Panel Upgrade" loading="lazy"><em class="count">3 photos</em><div class="cap"><h3>Electrical Panel Upgrade</h3><span>Maintenance · Ghaziabad</span></div></div>
+      <div class="tile" data-cat="landscape" data-images="images/gallery/rooftop-garden-1.jpg,images/gallery/rooftop-garden-2.jpg,images/gallery/rooftop-garden-3.jpg,images/gallery/rooftop-garden-4.jpg,images/gallery/rooftop-garden-5.jpg,images/gallery/rooftop-garden-6.jpg"><img src="images/gallery/rooftop-garden-1.jpg" alt="Rooftop Garden" loading="lazy"><em class="count">6 photos</em><div class="cap"><h3>Rooftop Garden</h3><span>Landscaping · Noida</span></div></div>
+      <div class="tile" data-cat="security" data-images="images/gallery/residential-society-guards-1.jpg,images/gallery/residential-society-guards-2.jpg,images/gallery/residential-society-guards-3.jpg"><img src="images/gallery/residential-society-guards-1.jpg" alt="Residential Society Guards" loading="lazy"><em class="count">3 photos</em><div class="cap"><h3>Residential Society Guards</h3><span>Security · Greater Noida</span></div></div>
+      <div class="tile" data-cat="cleaning" data-images="images/gallery/glass-facade-cleaning-1.jpg"><img src="images/gallery/glass-facade-cleaning-1.jpg" alt="Glass Facade Cleaning" loading="lazy"><div class="cap"><h3>Glass Facade Cleaning</h3><span>Housekeeping · Gurugram</span></div></div>
     </div>
   </div>
 </section>
@@ -62,8 +60,10 @@
 <div class="lightbox" id="lightbox">
   <div class="box">
     <button class="close" aria-label="Close">×</button>
-    <div class="em"></div>
-    <h3 style="color:#fff;margin-top:10px"></h3>
+    <button class="nav prev" aria-label="Previous photo">‹</button>
+    <img alt="">
+    <button class="nav next" aria-label="Next photo">›</button>
+    <h3></h3>
     <p></p>
   </div>
 </div>
