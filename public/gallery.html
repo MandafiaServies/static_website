@@ -5,7 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gallery | Mandafia Services</title>
 <meta name="description" content="A look at Mandafia Services's housekeeping, security, maintenance and landscaping work across client sites.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
+<style>
+/* Gallery photos */
+.gallery .tile{height:auto;padding:0;background:#fff;color:#0b1f3a;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden;position:relative}
+.gallery .tile::after{content:none}
+.gallery .tile img{position:static;width:100%;height:210px;object-fit:cover;display:block;transition:.4s}
+.gallery .tile:hover img{transform:scale(1.05)}
+.gallery .tile .cap{position:static;padding:14px 16px 16px;background:#fff}
+.gallery .tile .cap h3{color:#0b1f3a;font-size:1.05rem;margin:0 0 4px}
+.gallery .tile .cap span{color:#333;font-size:.9rem;opacity:1}
+.gallery .tile .count{position:absolute;top:12px;right:12px;z-index:2;background:rgba(5,15,30,.75);color:#fff;font-style:normal;font-size:.75rem;padding:4px 10px;border-radius:20px}
+.lightbox .box{max-width:900px;padding:20px;background:none}
+.lightbox .box img{max-width:100%;max-height:72vh;border-radius:var(--radius);display:block;margin:0 auto}
+.lightbox .box h3{color:#fff;margin-top:12px}
+.lightbox .box p{margin-top:4px;opacity:.85}
+.lightbox .nav{position:absolute;top:40%;background:rgba(255,255,255,.18);border:0;color:#fff;font-size:2.2rem;width:44px;height:44px;border-radius:50%;cursor:pointer;line-height:1}
+.lightbox .nav.prev{left:8px}.lightbox .nav.next{right:8px}
+.lightbox .nav.hide{display:none}
+.lightbox .close{top:-6px;right:6px;z-index:2}
+.lightbox .thumbs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.lightbox .thumbs img{width:70px;height:52px;object-fit:cover;border-radius:6px;cursor:pointer;opacity:.55;border:2px solid transparent}
+.lightbox .thumbs img.on{opacity:1;border-color:#fff}
+</style>
 </head>
 <body>
 <header>
@@ -79,6 +101,6 @@
   </div>
   <div class="copy">© <span class="year"></span> Mandafia Services. All rights reserved.</div>
 </footer>
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
