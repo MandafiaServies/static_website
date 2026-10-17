@@ -20,19 +20,28 @@ const lb = document.getElementById('lightbox');
 if (lb) {
   const img = lb.querySelector('img');
   const prev = lb.querySelector('.prev'), next = lb.querySelector('.next');
+  const thumbs = lb.querySelector('.thumbs');
   let list = [], idx = 0;
   const render = () => {
     img.src = list[idx];
+    thumbs.querySelectorAll('img').forEach((t, i) => t.classList.toggle('on', i === idx));
     prev.classList.toggle('hide', list.length < 2);
     next.classList.toggle('hide', list.length < 2);
   };
   const step = d => { idx = (idx + d + list.length) % list.length; render(); };
   tiles.forEach(t => t.addEventListener('click', () => {
-    list = (t.dataset.images || '').split(',').filter(Boolean);
+    list = (t.dataset.images || '').split('|').filter(Boolean);
     idx = 0;
     img.alt = t.querySelector('h3').textContent;
     lb.querySelector('h3').textContent = t.querySelector('h3').textContent;
     lb.querySelector('p').textContent = t.querySelector('span').textContent;
+    thumbs.innerHTML = '';
+    if (list.length > 1) list.forEach((src, i) => {
+      const th = document.createElement('img');
+      th.src = src; th.alt = 'Photo ' + (i + 1);
+      th.addEventListener('click', e => { e.stopPropagation(); idx = i; render(); });
+      thumbs.appendChild(th);
+    });
     render();
     lb.classList.add('open');
   }));
