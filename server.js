@@ -145,7 +145,7 @@ async function findFile(urlPath) {
   const base = path.join(PUBLIC_DIR, p);
   if (base !== PUBLIC_DIR && !base.startsWith(PUBLIC_DIR + path.sep)) return null;
 
-  const candidates = p.endsWith('/') || p === '' ? [path.join(base, 'index.html')] : [base, base + '.html', path.join(base, 'index.html')];
+  const candidates = p.endsWith('/') || p === '' ? [path.join(base, 'Home.html')] : [base, base + '.html', path.join(base, 'Home.html')];
   for (const file of candidates) {
     try {
       const st = await fs.promises.stat(file);
@@ -189,6 +189,11 @@ const server = http.createServer(async (req, res) => {
     const { pathname } = new URL(req.url, 'http://localhost');
 
     if (pathname === '/healthz') return sendJson(res, 200, { ok: true });
+    // The home page was renamed from index.html to Home.html: keep old links and bookmarks working
+    if (pathname === '/index.html' || pathname === '/index') {
+      res.writeHead(301, { ...SECURITY_HEADERS, Location: '/Home.html' });
+      return res.end();
+    }
     if (pathname === '/api/contact') {
       if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return sendJson(res, 405, { ok: false, message: 'Method not allowed.' }); }
       return await handleContact(req, res);

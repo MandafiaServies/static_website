@@ -14,7 +14,7 @@ nothing to install (`dependencies` is empty).
 ├── .env.example     all settings, copy to .env for local use
 ├── .gitignore
 └── public/          the website
-    ├── index.html, about.html, services.html, gallery.html, careers.html, contact.html, 404.html
+    ├── Home.html, about.html, services.html, gallery.html, careers.html, contact.html, 404.html
     ├── style.css, script.js
     ├── jd/          job description PDFs
     └── images/      your photos and logo
