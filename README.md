@@ -44,6 +44,15 @@ GoDaddy Node.js hosting does not allow outbound SMTP, so the default transport i
 Set `MAIL_TRANSPORT=smtp`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE` (`true` for 465, `starttls` for 587),
 `SMTP_USER`, `SMTP_PASS`, `FROM_EMAIL`, `TO_EMAIL`.
 
+**Gmail via SMTP**
+1. In your Google account turn on 2-Step Verification, then create an App Password
+   (myaccount.google.com/apppasswords).
+2. Set `MAIL_TRANSPORT=smtp`, `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_SECURE=true`,
+   `SMTP_USER=<your Gmail address>`, `SMTP_PASS=<the App Password>`,
+   `FROM_EMAIL=<same Gmail address>`, `TO_EMAIL=<inbox that should receive enquiries>`.
+3. This needs a host that allows outbound SMTP (local machine, VPS). GoDaddy Node.js hosting blocks it,
+   so use Resend there.
+
 Built-in protection: server-side validation, hidden spam-trap field, `RATE_LIMIT_PER_HOUR` submissions per
 visitor per hour (default 5), 20 KB request limit, header-injection filtering.
 
