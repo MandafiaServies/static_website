@@ -18,7 +18,7 @@ filterBtns.forEach(b => b.addEventListener('click', () => {
 
 const lb = document.getElementById('lightbox');
 if (lb) {
-  const img = lb.querySelector('img');
+  const img = lb.querySelector('img'); img.decoding = 'async';
   const prev = lb.querySelector('.prev'), next = lb.querySelector('.next');
   const thumbs = lb.querySelector('.thumbs');
   let list = [], idx = 0;
@@ -38,7 +38,7 @@ if (lb) {
     thumbs.innerHTML = '';
     if (list.length > 1) list.forEach((src, i) => {
       const th = document.createElement('img');
-      th.src = src; th.alt = 'Photo ' + (i + 1);
+      th.decoding = 'async'; th.loading = 'lazy'; th.src = src; th.alt = 'Photo ' + (i + 1);
       th.addEventListener('click', e => { e.stopPropagation(); idx = i; render(); });
       thumbs.appendChild(th);
     });
