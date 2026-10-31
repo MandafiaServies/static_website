@@ -21,6 +21,7 @@
 .cl-item{height:110px;background:#fff;border:1px solid #e3eaf3;border-radius:14px;display:flex;align-items:center;justify-content:center;padding:18px;box-shadow:0 4px 14px rgba(11,37,69,.06);transition:.25s}
 .cl-item:hover,.cl-item:focus-visible{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,37,69,.12);outline:none;border-color:var(--teal)}
 .cl-logo{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.cl-card-logo .cl-logo img{max-height:70px;max-width:260px}
 .cl-logo img[hidden],.cl-logo-name[hidden]{display:none}
 .cl-logo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
 .cl-logo-name{font-weight:800;font-size:1.05rem;color:var(--navy);text-align:center;line-height:1.25}
@@ -30,7 +31,7 @@
 .cl-group-title{font-size:1.45rem;margin-bottom:20px}
 .cl-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .cl-card{display:flex;flex-direction:column;gap:8px;scroll-margin-top:96px}
-.cl-card-logo{height:96px;background:var(--light);border-radius:10px;padding:14px 22px;margin-bottom:6px}
+.cl-card-logo{height:110px;background:#fff;border:1px solid #e3eaf3;border-radius:10px;padding:16px 24px;margin-bottom:6px}
 .cl-tag{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
 .cl-card h4{font-size:1.3rem;color:var(--navy)}
 .cl-card p{color:var(--muted);font-size:.96rem}
@@ -40,6 +41,10 @@
 .cl-why .card h4{margin-bottom:6px;font-size:1.05rem;color:var(--navy)}
 @media(max-width:900px){.cl-cards{grid-template-columns:1fr}.cl-ind{grid-template-columns:1fr 1fr!important}}
 @media(max-width:520px){.cl-ind{grid-template-columns:1fr!important}.cl-grid{grid-template-columns:repeat(2,1fr)}.cl-item{height:92px;padding:12px}}
+/* Page hero alignment (all inner pages): centre heading and subtitle on one axis */
+.page-hero .container{text-align:center}
+.page-hero h1{max-width:none;margin:0 auto 10px;text-align:center}
+.page-hero p{margin:0 auto 14px;text-align:center}
 </style>
 </head>
 <body>
@@ -86,18 +91,20 @@
       <p>Leading names in technology, consulting, banking, media and industry rely on us as their corporate facility management partner in India.</p>
     </div>
     <div class="cl-grid">
-      <a class="cl-item" href="#client-spectraforce" aria-label="SPECTRAFORCE profile"><span class="cl-logo" data-slug="spectraforce"><img alt="SPECTRAFORCE logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">SPECTRAFORCE</span></span></a>
-      <a class="cl-item" href="#client-ibm" aria-label="IBM profile"><span class="cl-logo" data-slug="ibm"><img alt="IBM logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">IBM</span></span></a>
-      <a class="cl-item" href="#client-concentrix" aria-label="CONCENTRIX profile"><span class="cl-logo" data-slug="concentrix"><img alt="CONCENTRIX logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">CONCENTRIX</span></span></a>
-      <a class="cl-item" href="#client-mercer" aria-label="Mercer profile"><span class="cl-logo" data-slug="mercer"><img alt="Mercer logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Mercer</span></span></a>
-      <a class="cl-item" href="#client-hcl" aria-label="HCL profile"><span class="cl-logo" data-slug="hcl"><img alt="HCL logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">HCL</span></span></a>
-      <a class="cl-item" href="#client-times-of-india" aria-label="Times of India profile"><span class="cl-logo" data-slug="times-of-india"><img alt="Times of India logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Times of India</span></span></a>
-      <a class="cl-item" href="#client-birlasoft" aria-label="Birlasoft profile"><span class="cl-logo" data-slug="birlasoft"><img alt="Birlasoft logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Birlasoft</span></span></a>
-      <a class="cl-item" href="#client-google" aria-label="Google profile"><span class="cl-logo" data-slug="google"><img alt="Google logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Google</span></span></a>
-      <a class="cl-item" href="#client-adani" aria-label="Adani profile"><span class="cl-logo" data-slug="adani"><img alt="Adani logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Adani</span></span></a>
-      <a class="cl-item" href="#client-state-bank-of-india" aria-label="State Bank of India (SBI) profile"><span class="cl-logo" data-slug="state-bank-of-india"><img alt="State Bank of India (SBI) logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">State Bank of India (SBI)</span></span></a>
-      <a class="cl-item" href="#client-bank-of-baroda" aria-label="Bank of Baroda profile"><span class="cl-logo" data-slug="bank-of-baroda"><img alt="Bank of Baroda logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Bank of Baroda</span></span></a>
-      <a class="cl-item" href="#client-reliance" aria-label="Reliance profile"><span class="cl-logo" data-slug="reliance"><img alt="Reliance logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Reliance</span></span></a>
+      <a class="cl-item" href="#client-spectraforce" aria-label="SPECTRAFORCE profile"><span class="cl-logo" data-slug="spectraforce"><img alt="SPECTRAFORCE logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">SPECTRAFORCE</span></span></a>
+      <a class="cl-item" href="#client-ibm" aria-label="IBM profile"><span class="cl-logo" data-slug="ibm"><img alt="IBM logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">IBM</span></span></a>
+      <a class="cl-item" href="#client-concentrix" aria-label="CONCENTRIX profile"><span class="cl-logo" data-slug="concentrix"><img alt="CONCENTRIX logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">CONCENTRIX</span></span></a>
+      <a class="cl-item" href="#client-mercer" aria-label="Mercer profile"><span class="cl-logo" data-slug="mercer"><img alt="Mercer logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Mercer</span></span></a>
+      <a class="cl-item" href="#client-hcl" aria-label="HCL profile"><span class="cl-logo" data-slug="hcl"><img alt="HCL logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">HCL</span></span></a>
+      <a class="cl-item" href="#client-times-of-india" aria-label="Times of India profile"><span class="cl-logo" data-slug="times-of-india"><img alt="Times of India logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Times of India</span></span></a>
+      <a class="cl-item" href="#client-birlasoft" aria-label="Birlasoft profile"><span class="cl-logo" data-slug="birlasoft"><img alt="Birlasoft logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Birlasoft</span></span></a>
+      <a class="cl-item" href="#client-google" aria-label="Google profile"><span class="cl-logo" data-slug="google"><img alt="Google logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Google</span></span></a>
+      <a class="cl-item" href="#client-adani" aria-label="Adani profile"><span class="cl-logo" data-slug="adani"><img alt="Adani logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Adani</span></span></a>
+      <a class="cl-item" href="#client-state-bank-of-india" aria-label="State Bank of India (SBI) profile"><span class="cl-logo" data-slug="state-bank-of-india"><img alt="State Bank of India (SBI) logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">State Bank of India (SBI)</span></span></a>
+      <a class="cl-item" href="#client-bank-of-baroda" aria-label="Bank of Baroda profile"><span class="cl-logo" data-slug="bank-of-baroda"><img alt="Bank of Baroda logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Bank of Baroda</span></span></a>
+      <a class="cl-item" href="#client-hdfc" aria-label="HDFC Bank profile"><span class="cl-logo" data-slug="hdfc"><img alt="HDFC Bank logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">HDFC Bank</span></span></a>
+      <a class="cl-item" href="#client-sbi-card" aria-label="SBI Card profile"><span class="cl-logo" data-slug="sbi-card"><img alt="SBI Card logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">SBI Card</span></span></a>
+      <a class="cl-item" href="#client-reliance" aria-label="Reliance profile"><span class="cl-logo" data-slug="reliance"><img alt="Reliance logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Reliance</span></span></a>
     </div>
   </div>
 </section>
@@ -112,7 +119,7 @@
     <div class="grid-3 cl-cat-grid">
       <a class="card cl-cat" href="#industry-it"><div class="icon" aria-hidden="true">💻</div><h3>IT &amp; Technology</h3><p>Technology, software and digital engineering organisations.</p><span class="cl-count">4 clients</span></a>
       <a class="card cl-cat" href="#industry-bpm"><div class="icon" aria-hidden="true">🧩</div><h3>Business Process Management &amp; Professional Services</h3><p>Workforce, customer experience and consulting firms.</p><span class="cl-count">3 clients</span></a>
-      <a class="card cl-cat" href="#industry-banking"><div class="icon" aria-hidden="true">🏦</div><h3>Banking &amp; Financial Services</h3><p>Public and private sector banks and financial institutions.</p><span class="cl-count">2 clients</span></a>
+      <a class="card cl-cat" href="#industry-banking"><div class="icon" aria-hidden="true">🏦</div><h3>Banking &amp; Financial Services</h3><p>Public and private sector banks and financial institutions.</p><span class="cl-count">4 clients</span></a>
       <a class="card cl-cat" href="#industry-media"><div class="icon" aria-hidden="true">📰</div><h3>Media &amp; Communications</h3><p>Publishing and news media organisations.</p><span class="cl-count">1 client</span></a>
       <a class="card cl-cat" href="#industry-conglomerates"><div class="icon" aria-hidden="true">🏭</div><h3>Conglomerates &amp; Industrial Groups</h3><p>Diversified groups spanning energy, infrastructure and retail.</p><span class="cl-count">2 clients</span></a>
     </div>
@@ -130,28 +137,28 @@
       <h3 class="cl-group-title"><span aria-hidden="true">💻</span> IT &amp; Technology</h3>
       <div class="cl-cards">
         <article class="card cl-card" id="client-ibm">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="ibm"><img alt="IBM logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">IBM</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="ibm"><img alt="IBM logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">IBM</span></span></div>
           <span class="cl-tag">IT &amp; Technology</span>
           <h4>IBM</h4>
           <p>IBM, or International Business Machines Corporation, is a global technology company headquartered in Armonk, New York. Its portfolio spans hybrid cloud, artificial intelligence, consulting and enterprise software, and it works with organisations across banking, government, telecom and many other sectors. IBM has a long-standing presence in India. Technology and consulting campuses of this kind rely on secure, orderly premises, where housekeeping standards, access management and consistent day-to-day facility support help teams stay focused on complex work. Mandafia Services is pleased to list IBM among the organisations it serves.</p>
           <a class="cl-link" href="https://www.ibm.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for IBM (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-hcl">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="hcl"><img alt="HCL logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">HCL</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="hcl"><img alt="HCL logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">HCL</span></span></div>
           <span class="cl-tag">IT &amp; Technology</span>
           <h4>HCL</h4>
           <p>HCLTech, formerly known as HCL Technologies, is a global technology company headquartered in Noida, India. It offers digital, engineering and cloud services alongside software, supporting enterprises in sectors such as financial services, healthcare, manufacturing and telecom. As an India-born technology group with large, multi-building campuses, it operates the kind of environments where integrated facility management has real value, including housekeeping, security coordination, landscaping and general premises upkeep delivered consistently across shared spaces. Mandafia Services takes pride in listing HCL among its clients.</p>
           <a class="cl-link" href="https://www.hcltech.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for HCL (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-birlasoft">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="birlasoft"><img alt="Birlasoft logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Birlasoft</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="birlasoft"><img alt="Birlasoft logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Birlasoft</span></span></div>
           <span class="cl-tag">IT &amp; Technology</span>
           <h4>Birlasoft</h4>
           <p>Birlasoft is an India-based digital and information technology company and part of the CK Birla Group. It provides enterprise software, cloud, data, and consulting services that help organisations modernise their business systems and operations across industries such as manufacturing, life sciences and financial services. Technology services businesses of this type run on collaborative, people-centred offices, with project teams, client meeting spaces and shared amenities that need steady care. Consistent housekeeping, workplace safety and responsive support help keep such facilities comfortable and professional. Mandafia Services is happy to count Birlasoft among its clients.</p>
           <a class="cl-link" href="https://www.birlasoft.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for Birlasoft (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-google">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="google"><img alt="Google logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Google</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="google"><img alt="Google logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Google</span></span></div>
           <span class="cl-tag">IT &amp; Technology</span>
           <h4>Google</h4>
           <p>Google, a subsidiary of Alphabet Inc., is a global technology company known for products and services such as Search, Android, Chrome, YouTube and Google Cloud. It maintains offices across India, supporting engineering, sales, partnerships and other teams. Modern technology workplaces place a strong emphasis on shared amenities, collaboration areas and employee wellbeing, so cleanliness, hospitality-style upkeep and dependable operational support all contribute to the quality of the day-to-day office experience. Mandafia Services is proud to include Google in its portfolio of corporate clients.</p>
@@ -163,21 +170,21 @@
       <h3 class="cl-group-title"><span aria-hidden="true">🧩</span> Business Process Management &amp; Professional Services</h3>
       <div class="cl-cards">
         <article class="card cl-card" id="client-spectraforce">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="spectraforce"><img alt="SPECTRAFORCE logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">SPECTRAFORCE</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="spectraforce"><img alt="SPECTRAFORCE logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">SPECTRAFORCE</span></span></div>
           <span class="cl-tag">Business Process Management &amp; Professional Services</span>
           <h4>SPECTRAFORCE</h4>
           <p>SPECTRAFORCE is a global workforce solutions company founded in 2004 in Raleigh, North Carolina. It provides talent and managed workforce programs through staff augmentation, direct hire, managed service provider partnerships, recruitment process outsourcing and project-based solutions, serving industries such as technology, healthcare, finance, telecom and life sciences. With delivery hubs that include Hyderabad and Mohali in India, it operates in professional office and delivery-centre environments, where clean, well-maintained and dependably supported workspaces matter to the people who work there every day. Mandafia Services is proud to count SPECTRAFORCE among its clients.</p>
           <a class="cl-link" href="https://spectraforce.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for SPECTRAFORCE (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-concentrix">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="concentrix"><img alt="CONCENTRIX logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">CONCENTRIX</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="concentrix"><img alt="CONCENTRIX logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">CONCENTRIX</span></span></div>
           <span class="cl-tag">Business Process Management &amp; Professional Services</span>
           <h4>CONCENTRIX</h4>
           <p>Concentrix is a global provider of customer experience solutions and technology, supporting brands with customer engagement, digital services and business process management. Its teams work across many industries and languages to help companies manage the way they interact with their customers. Customer experience operations are people-intensive environments, with large teams working in shifts, so hygiene, safety, security and smooth workplace upkeep are central to a comfortable and productive floor. Mandafia Services is honoured to include Concentrix in its portfolio of corporate clients.</p>
           <a class="cl-link" href="https://www.concentrix.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for CONCENTRIX (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-mercer">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="mercer"><img alt="Mercer logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Mercer</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="mercer"><img alt="Mercer logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Mercer</span></span></div>
           <span class="cl-tag">Business Process Management &amp; Professional Services</span>
           <h4>Mercer</h4>
           <p>Mercer is a global consulting firm and part of Marsh McLennan, advising organisations on health, wealth and career matters. Its work covers areas such as employee benefits, retirement, investments and workforce strategy, helping employers make informed decisions about their people. Professional services firms depend on polished, client-ready offices where meeting rooms, reception areas and shared workspaces consistently reflect the standard of the advice offered inside them. Presentation, discretion and reliable upkeep are the facility qualities that matter most in such settings. Mandafia Services is proud to count Mercer among its clients.</p>
@@ -189,18 +196,32 @@
       <h3 class="cl-group-title"><span aria-hidden="true">🏦</span> Banking &amp; Financial Services</h3>
       <div class="cl-cards">
         <article class="card cl-card" id="client-state-bank-of-india">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="state-bank-of-india"><img alt="State Bank of India (SBI) logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">State Bank of India (SBI)</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="state-bank-of-india"><img alt="State Bank of India (SBI) logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">State Bank of India (SBI)</span></span></div>
           <span class="cl-tag">Banking &amp; Financial Services</span>
           <h4>State Bank of India (SBI)</h4>
           <p>State Bank of India is a public sector bank headquartered in Mumbai and one of the largest banks in the country, serving individuals, businesses and government customers through a very wide network of branches and digital channels. Banking premises combine public-facing branch floors with back-office and administrative areas, so cleanliness, orderly customer spaces, security awareness and reliable building upkeep are important to both customers and staff. Mandafia Services is proud to include State Bank of India among its clients.</p>
           <a class="cl-link" href="https://sbi.co.in" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for State Bank of India (SBI) (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-bank-of-baroda">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="bank-of-baroda"><img alt="Bank of Baroda logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Bank of Baroda</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="bank-of-baroda"><img alt="Bank of Baroda logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Bank of Baroda</span></span></div>
           <span class="cl-tag">Banking &amp; Financial Services</span>
           <h4>Bank of Baroda</h4>
           <p>Bank of Baroda is a public sector bank founded in 1908 in Baroda, now Vadodara, and nationalised in 1969. It offers retail, corporate and international banking and has a presence in India and overseas. Bank branches and offices are trust-based environments, where customers expect tidy, welcoming and secure premises, and staff rely on well-maintained working areas through the day. Housekeeping standards, safe access and steady facility support are therefore closely tied to the customer experience. Mandafia Services is pleased to count Bank of Baroda among its clients.</p>
           <a class="cl-link" href="https://www.bankofbaroda.in" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for Bank of Baroda (opens in a new tab)</span> →</a>
+        </article>
+        <article class="card cl-card" id="client-hdfc">
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="hdfc"><img alt="HDFC Bank logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">HDFC Bank</span></span></div>
+          <span class="cl-tag">Banking &amp; Financial Services</span>
+          <h4>HDFC Bank</h4>
+          <p>HDFC Bank is a leading private sector bank in India, headquartered in Mumbai. It serves individuals, businesses and institutions through retail and wholesale banking, along with digital banking channels and a wide network of branches. Bank branches and offices are trust-driven environments, where customers notice clean, orderly waiting areas and secure, well-kept premises as much as the service itself. Back-office and administrative floors likewise depend on steady housekeeping and reliable building upkeep to keep teams productive. Mandafia Services is proud to count HDFC Bank among its clients.</p>
+          <a class="cl-link" href="https://www.hdfcbank.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for HDFC Bank (opens in a new tab)</span> →</a>
+        </article>
+        <article class="card cl-card" id="client-sbi-card">
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="sbi-card"><img alt="SBI Card logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">SBI Card</span></span></div>
+          <span class="cl-tag">Banking &amp; Financial Services</span>
+          <h4>SBI Card</h4>
+          <p>SBI Card, formally SBI Cards and Payment Services Limited, is a credit card issuer in India promoted by State Bank of India. It offers credit cards and payment solutions to individual and corporate customers through digital channels and a broad distribution network. Card operations bring together customer service teams, technology and administrative functions in office environments, where cleanliness, orderly workspaces, safe access and dependable day-to-day facility support help people stay productive. Mandafia Services is honoured to include SBI Card among its clients.</p>
+          <a class="cl-link" href="https://www.sbicard.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for SBI Card (opens in a new tab)</span> →</a>
         </article>
       </div>
     </div>
@@ -208,7 +229,7 @@
       <h3 class="cl-group-title"><span aria-hidden="true">📰</span> Media &amp; Communications</h3>
       <div class="cl-cards">
         <article class="card cl-card" id="client-times-of-india">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="times-of-india"><img alt="Times of India logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Times of India</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="times-of-india"><img alt="Times of India logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Times of India</span></span></div>
           <span class="cl-tag">Media &amp; Communications</span>
           <h4>Times of India</h4>
           <p>The Times of India is one of the country’s best-known English-language daily newspapers, published by Bennett, Coleman &amp; Company Limited as part of The Times Group. Alongside its print editions, the brand reaches readers through digital news platforms. Media organisations combine busy newsrooms, editorial desks and administrative offices, often operating on tight daily deadlines. Such premises benefit from dependable cleaning, safe and secure access and well-kept common areas, so that editorial and business teams can work without disruption. Mandafia Services is pleased to present The Times of India among its clients.</p>
@@ -220,14 +241,14 @@
       <h3 class="cl-group-title"><span aria-hidden="true">🏭</span> Conglomerates &amp; Industrial Groups</h3>
       <div class="cl-cards">
         <article class="card cl-card" id="client-adani">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="adani"><img alt="Adani logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Adani</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="adani"><img alt="Adani logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Adani</span></span></div>
           <span class="cl-tag">Conglomerates &amp; Industrial Groups</span>
           <h4>Adani</h4>
           <p>The Adani Group is a diversified Indian conglomerate headquartered in Ahmedabad, with businesses spanning ports and logistics, energy and utilities, airports, infrastructure and resources. Operating across such varied sectors means a wide mix of environments, from corporate offices to large operational sites and industrial infrastructure. Groups of this scale typically look for facility partners that can bring organised, dependable support across different types of premises, from administrative buildings to site facilities. Mandafia Services is honoured to list Adani among the organisations it serves.</p>
           <a class="cl-link" href="https://www.adani.com" target="_blank" rel="noopener noreferrer">Visit official website <span class="sr-only">for Adani (opens in a new tab)</span> →</a>
         </article>
         <article class="card cl-card" id="client-reliance">
-          <div class="cl-card-logo"><span class="cl-logo" data-slug="reliance"><img alt="Reliance logo" width="160" height="70" loading="lazy" decoding="async" hidden><span class="cl-logo-name">Reliance</span></span></div>
+          <div class="cl-card-logo"><span class="cl-logo" data-slug="reliance"><img alt="Reliance logo" width="160" height="70" decoding="async" hidden><span class="cl-logo-name">Reliance</span></span></div>
           <span class="cl-tag">Conglomerates &amp; Industrial Groups</span>
           <h4>Reliance</h4>
           <p>Reliance Industries Limited is one of India’s largest private sector groups, headquartered in Mumbai, with interests in energy, petrochemicals, retail, and digital services. Its businesses range from large industrial and energy operations to consumer retail and technology, reaching millions of customers. A group with such breadth works across offices, campuses, retail and industrial settings, each with its own demands for cleanliness, safety and coordinated premises management. That variety makes consistent, well-organised facility support especially valuable. Mandafia Services is honoured to include Reliance in its client portfolio.</p>
